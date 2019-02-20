@@ -24,96 +24,23 @@
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
                     <div class="blog-sidebar">
 						<div class="row clearfix">
-							
+							{%for post in posts%}
 							<!-- News Block -->
 							<div class="news-block col-lg-6 col-md-6 col-sm-12">
 								<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 									<div class="image">
-										<a href="blog-single.html"><img src="{% static 'core/images/resource/news-1.jpg' %}" alt="" /></a>
+										<a href="#"><img src="{{post.image.url}}" alt="" /></a>
 										<div class="content-box">
-											<div class="category">books</div>
-											<h4><a href="blog-single.html">California abandons plan to tax text messages</a></h4>
-											<div class="post-date">December 19, 2018</div>
-											<a href="blog-single.html" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
+											<div class="category">{%for category in post.categories.all%}{{category.name}}{%if not forloop.last%}-{%endif%}{%endfor%}</div>
+											<h4><a href="#">{{post.title}}</a></h4>
+											<div class="post-date">{{post.created}}</div>
+											<a href="#" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
 										</div>
 									</div>
 								</div>
 							</div>
+							{%endfor%}
 							
-							<!-- News Block -->
-							<div class="news-block col-lg-6 col-md-6 col-sm-12">
-								<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-									<div class="image">
-										<a href="blog-single.html"><img src="{% static 'core/images/resource/news-2.jpg' %}" alt="" /></a>
-										<div class="content-box">
-											<div class="category">design</div>
-											<h4><a href="blog-single.html">Good design is good for business, new study finds</a></h4>
-											<div class="post-date">December 19, 2018</div>
-											<a href="blog-single.html" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<!-- News Block -->
-							<div class="news-block col-lg-6 col-md-6 col-sm-12">
-								<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-									<div class="image">
-										<a href="blog-single.html"><img src="{% static 'core/images/resource/news-4.jpg' %}" alt="" /></a>
-										<div class="content-box">
-											<div class="category">print</div>
-											<h4><a href="blog-single.html">California abandons plan to tax text messages</a></h4>
-											<div class="post-date">December 19, 2018</div>
-											<a href="blog-single.html" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<!-- News Block -->
-							<div class="news-block col-lg-6 col-md-6 col-sm-12">
-								<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-									<div class="image">
-										<a href="blog-single.html"><img src="{% static 'core/images/resource/news-5.jpg' %}" alt="" /></a>
-										<div class="content-box">
-											<div class="category">workspace</div>
-											<h4><a href="blog-single.html">Chinese hackers behind massive Marriott</a></h4>
-											<div class="post-date">December 19, 2018</div>
-											<a href="blog-single.html" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<!-- News Block -->
-							<div class="news-block col-lg-6 col-md-6 col-sm-12">
-								<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-									<div class="image">
-										<a href="blog-single.html"><img src="{% static 'core/images/resource/news-7.jpg' %}" alt="" /></a>
-										<div class="content-box">
-											<div class="category">business</div>
-											<h4><a href="blog-single.html">California abandons plan to tax text messages</a></h4>
-											<div class="post-date">December 19, 2018</div>
-											<a href="blog-single.html" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<!-- News Block -->
-							<div class="news-block col-lg-6 col-md-6 col-sm-12">
-								<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-									<div class="image">
-										<a href="blog-single.html"><img src="{% static 'core/images/resource/news-8.jpg' %}" alt="" /></a>
-										<div class="content-box">
-											<div class="category">photography</div>
-											<h4><a href="blog-single.html">100-year clock and the importance of durability</a></h4>
-											<div class="post-date">December 19, 2018</div>
-											<a href="blog-single.html" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
 							
 						</div>
 						
@@ -145,21 +72,21 @@
                             <div class="widget-content">
 
 								<article class="post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img src="{% static 'core/images/resource/post-thumb-1.jpg' %}" alt=""></a></figure>
+                                    <figure class="post-thumb"><a href="#"><img src="{% static 'core/images/resource/post-thumb-1.jpg' %}" alt=""></a></figure>
                                     <div class="post-info">18.09.2018</div>
-                                    <div class="text"><a href="blog-single.html">Design solutions <br> for any media.</a></div>
+                                    <div class="text"><a href="#">Design solutions <br> for any media.</a></div>
                                 </article>
     
                                 <article class="post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img src="{% static 'core/images/resource/post-thumb-2.jpg' %}" alt=""></a></figure>
+                                    <figure class="post-thumb"><a href="#"><img src="{% static 'core/images/resource/post-thumb-2.jpg' %}" alt=""></a></figure>
                                     <div class="post-info">18.09.2018</div>
-                                    <div class="text"><a href="blog-single.html">Design solutions <br> for any media.</a></div>
+                                    <div class="text"><a href="#">Design solutions <br> for any media.</a></div>
                                 </article>
                                 
                                 <article class="post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img src="{% static 'core/images/resource/post-thumb-3.jpg' %}" alt=""></a></figure>
+                                    <figure class="post-thumb"><a href="#"><img src="{% static 'core/images/resource/post-thumb-3.jpg' %}" alt=""></a></figure>
                                     <div class="post-info">18.09.2018</div>
-                                    <div class="text"><a href="blog-single.html">Design solutions <br> for any media.</a></div>
+                                    <div class="text"><a href="#">Design solutions <br> for any media.</a></div>
                                 </article>
 
 							</div>
@@ -169,17 +96,16 @@
                         <div class="sidebar-widget category-widget">
                         	<div class="sidebar-title">
                             	<h3>Category</h3>
-                            </div>
+							</div>
+							{%for post in posts%}
+							{%for category in post.categories.all%}
                             <div class="widget-content">
-                            	<ul>
-									<li><a href="#">Busines</a></li>
-									<li><a href="#">Marketing</a></li>
-									<li><a href="#">Creative</a></li>
-									<li><a href="#">Trending</a></li>
-									<li><a href="#">Creative</a></li>
-									<li><a href="#">Trending</a></li>
+								<ul>
+									<li><a href="{% url 'category' category.id%}">{{category.name}}</a></li>
 								</ul>
 							</div>
+							{%endfor%}
+							{%endfor%}
 						</div>
 						
 						<!-- Instagram Widget -->

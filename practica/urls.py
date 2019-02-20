@@ -24,6 +24,8 @@ urlpatterns = [
     path('', include('core.urls')),
     #path del classes
     path('classes/', include('classes.urls')),
+    #path del blog
+    path('blog/', include('blog.urls')),
     #path admin 
     path('admin/', admin.site.urls),
 ]

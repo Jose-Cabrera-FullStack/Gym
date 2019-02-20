@@ -59,7 +59,7 @@
 									<li {%if  request.path == '/about-us/'%}class="current"{%endif%}><a href="{% url 'about-us' %}">About Us</a></li>
 									<li {%if  request.path == '/trainers/'%}class="current"{%endif%}><a href="{% url 'trainers' %}">Trainers</a></li>
 									<li {%if  request.path == '/classes/'%}class="current"{%endif%}><a href="{% url 'classes' %}">Classes</a></li>
-									<li {%if  request.path == '/blog/'%}class="current"{%endif%}><a href="{% url 'blog' %}">Blog</a></li>
+									<li {%if  request.path|slice:":6" == '/blog/'%}class="current"{%endif%}><a href="{% url 'blog' %}">Blog</a></li>
 									<li {%if  request.path == '/gallery/'%}class="current"{%endif%}><a href="{% url 'gallery' %}">Gallery</a></li>
 									<li {%if  request.path == '/contact-us/'%}class="current"{%endif%}><a href="{% url 'contact-us' %}">Contact Us</a></li>
 								</ul>
@@ -131,12 +131,13 @@
 					<div class="footer-column">
 						<div class="footer-widget social-widget">
 							<ul class="social-icon-one">
-								<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-								<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-								<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-								<li><a href="#"><span class="fa fa-tumblr"></span></a></li>
-								<li><a href="#"><span class="fa fa-vimeo"></span></a></li>
-								<li><a href="#"><span class="fa fa-pinterest"></span></a></li>
+								
+								<li><a href="{{LINK_FACEBOOK}}"><span class="fa fa-facebook"></span></a></li>
+								<li><a href="{{LINK_TWITTER}}"><span class="fa fa-twitter"></span></a></li>
+								<li><a href="{{LINK_LINKEDIN}}"><span class="fa fa-linkedin"></span></a></li>
+								<li><a href="{{LINK_TUMBLR}}"><span class="fa fa-tumblr"></span></a></li>
+								<li><a href="{{LINK_VIMEO}}"><span class="fa fa-vimeo"></span></a></li>
+								<li><a href="{{LINK_PINTEREST}}"><span class="fa fa-pinterest"></span></a></li>
 							</ul>
 						</div>
 					</div>
