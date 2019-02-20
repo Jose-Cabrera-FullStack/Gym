@@ -20,9 +20,6 @@ def about_us(request):
 def trainers(request):
     return render(request,"core/trainers.html")
 
-def classes(request):
-    return render(request,"core/classes.html")
-
 def blog(request):
     return render(request,"core/blog.html")
 

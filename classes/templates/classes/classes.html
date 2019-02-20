@@ -1,0 +1,45 @@
+{%extends 'core/base.html'%}
+{%load static%}
+
+{%block content%}
+	<!-- Page Title -->
+	<section class="page-title">
+		<div class="auto-container">
+			<h1>Classes</h1>
+			<ul class="page-breadcrumb">
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li>Classes</li>
+			</ul>
+		</div>
+	</section>
+	<!-- End Page Title -->
+	
+	<!-- Shop Page Section -->
+	<section class="shop-page-section">
+		<div class="auto-container">
+			<div class="row clearfix">
+				{%for class in classes%}
+				<!-- Shop Item -->
+				<div class="shop-item col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<img src="{{class.image.url}}" alt= ""/>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<h4><a href="shop-single.html">{{class.title}}</a></h4>
+									<ul class="product-list">
+										<li><a href="shop-single.html"><span class="icon flaticon-add-cart"></span></a></li>
+										<li><a href="shop-single.html"><span class="icon flaticon-heart"></span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{%endfor%}
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Page Section -->
+{%endblock%}

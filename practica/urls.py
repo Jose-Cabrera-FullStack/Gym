@@ -15,20 +15,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+
 
 urlpatterns = [
 
     #path del core
     path('', include('core.urls')),
+    #path del classes
+    path('classes/', include('classes.urls')),
     #path admin 
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG: #guarda las imaginas cuando el modo debug esta activo. "averiguar como hacerlo sin el modo debug"
+    from django.conf.urls.static import static 
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 """
--home
--about us
--trainers
--classes
--blog
--gallery
--contact us
+-home static
+-about us static
+-trainers dinamic
+-classes dinamic
+-blog dinamic
+-gallery dinamic
+-contact us static
 """
