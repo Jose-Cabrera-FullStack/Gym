@@ -23,5 +23,4 @@ def trainers(request):
 def gallery(request):
     return render(request,"core/gallery.html")
     
-def contact_us(request):
-    return render(request,"core/contact-us.html")
+

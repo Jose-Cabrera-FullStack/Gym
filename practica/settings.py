@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'core',
     'classes',
+    'ckeditor',
+    'contact',
+    'core',
+    'pages',
     'social',
 ]
 
@@ -128,3 +131,9 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+#Email config
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '254475376476ed'
+EMAIL_HOST_PASSWORD = 'd7919ebd449f42'
+EMAIL_PORT = '2525'
