@@ -28,8 +28,12 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     #path del page
     path('page/', include('pages.urls')),
-    #path del page
+    #path del Contact
     path('contact/', include('contact.urls')),
+    #path del Trainers
+    path('trainers/', include('trainers.urls')),
+    #path del gallery
+    path('gallery/', include('gallery.urls')),
     #path admin 
     path('admin/', admin.site.urls),
 ]

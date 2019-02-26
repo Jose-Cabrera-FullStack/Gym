@@ -1,0 +1,82 @@
+{%extends 'core/base.html'%}
+{%load static%}
+
+{%block content%}
+	
+	<!-- Page Title -->
+	<section class="page-title">
+		<div class="auto-container">
+			<h1>Class</h1>
+			<ul class="page-breadcrumb">
+				<li><a href="index.html">home</a></li>
+				<li><a href="index.html">Class</a></li>
+				<li>Class</li>
+			</ul>
+		</div>
+	</section>
+	<!-- End Page Title -->
+	{%for class in classes%}
+	<!--Sidebar Page-->
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="row clearfix">
+				
+				<!--Content Side-->
+                <div class="content-side col-lg-12 col-md-12 col-sm-12">
+                    <div class="shop-page product-details">
+						
+						<!--Basic Details-->
+						<div class="basic-details">
+							<div class="row clearfix">
+							
+								<div class="image-column col-lg-6 col-md-12 col-sm-12">
+									<div class="carousel-outer">
+				
+										<ul class="image-carousel owl-carousel owl-theme">
+											<li><a href="{{class.image.url}}" class="lightbox-image" title="Image Caption Here"><img src="{{class.image.url}}" alt=""></a></li>
+											<li><a href="{{class.image.url}}" class="lightbox-image" title="Image Caption Here"><img src="{{class.image.url}}" alt=""></a></li>
+										</ul>
+										
+										<ul class="thumbs-carousel owl-carousel owl-theme">
+											<li><img src="{{class.image.url}}" alt=""></li>
+											<li><img src="{{class.image.url}}" alt=""></li>
+										</ul>
+										
+									</div>
+								</div>
+								
+								<!--Info Column-->
+								<div class="info-column col-lg-6 col-md-12 col-sm-12">
+									<div class="details-header">
+										<h4>Woo Product Sample</h4>
+										<div class="item-price">$390.99</div>
+									</div>
+
+									<div class="text">
+										<p>{{class.subtitle|safe}}</p>
+									</div>
+									
+								</div>
+								
+							</div>
+						</div>
+						<!--Basic Details-->
+									<div class="details-header">
+										<!--Product Tabs-->
+										<div class="details-header">
+											<h4>Description</h4>
+											<div class="content">
+												<div class="">
+													<p>{{class.content|safe }}</p>
+												</div>
+											</div>	
+										</div>
+										
+									</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{%endfor%}
+{%endblock%}

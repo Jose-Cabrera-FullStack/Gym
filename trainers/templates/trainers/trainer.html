@@ -1,0 +1,154 @@
+{%extends 'core/base.html'%}
+{%load static%}
+{%block content%}
+	
+	<!-- Page Title -->
+	<section class="page-title">
+		<div class="auto-container">
+			<h1>Trainer</h1>
+			<ul class="page-breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html">Trainers</a></li>
+				<li>Trainer</li>
+			</ul>
+		</div>
+	</section>
+	<!-- End Page Title -->
+	{%for trainer in trainers%}
+	<!-- About Section -->
+	<section class="about-section">
+		<div class="auto-container">
+			<div class="row clearfix">
+				
+				<!-- Image Column -->
+				<div class="image-column col-lg-6 col-md-12 xol-sm-12">
+					<div class="inner-column">
+						<div class="image">
+							<img src="{{trainer.image.url}}" alt="" />
+						</div>
+					</div>
+				</div>
+				
+				<!-- Content Column -->
+				<div class="content-column col-lg-6 col-md-12 xol-sm-12">
+					<div class="inner-column">
+						<h3>{{trainer.name}}</h3>
+						<br>
+						<div class="text">
+							<p>{{trainer.content|safe}}</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<!-- Social Icon Two -->
+			<ul class="social-icon-two">
+				<li><a href="#"><span class="fa fa-facebook"></span></a></li>
+				<li><a href="#"><span class="fa fa-twitter"></span></a></li>
+				<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+				<li><a href="#"><span class="fa fa-tumblr"></span></a></li>
+			</ul>
+	
+		</div>
+	</section>
+	<!-- End About Section -->
+	{%endfor%}
+	<!-- Skrill Section -->
+	<section class="skrill-section">
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title">
+				<h6>My Skills</h6>
+			</div>
+
+			<!--Skills-->
+			<div class="skills">
+			
+				<div class="row clearfix">
+				
+					<!--Skill Item-->
+					<div class="skill-item column col-lg-4 col-md-6 col-sm-12">
+						<div class="skill-bar">
+							<div class="bar-inner">
+								<div class="skill-header clearfix">
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="88">0</span>%</div></div>
+									<div class="skill-title">Photoshop</div>
+								</div>
+								<div class="bar progress-line" data-width="88"></div>
+							</div>
+						</div>
+					</div>
+					
+					<!--Skill Item-->
+					<div class="skill-item column col-lg-4 col-md-6 col-sm-12">
+						<div class="skill-bar">
+							<div class="bar-inner">
+								<div class="skill-header clearfix">
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="70">0</span>%</div></div>
+									<div class="skill-title">HTML Coding</div>
+								</div>
+								<div class="bar progress-line" data-width="70"></div>
+							</div>
+						</div>
+					</div>
+					
+					<!--Skill Item-->
+					<div class="skill-item column col-lg-4 col-md-6 col-sm-12">
+						<div class="skill-bar">
+							<div class="bar-inner">
+								<div class="skill-header clearfix">
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="90">0</span>%</div></div>
+									<div class="skill-title">WordPress</div>
+								</div>
+								<div class="bar progress-line" data-width="90"></div>
+							</div>
+						</div>
+					</div>
+					
+					<!--Skill Item-->
+					<div class="skill-item column col-lg-4 col-md-6 col-sm-12">
+						<div class="skill-bar">
+							<div class="bar-inner">
+								<div class="skill-header clearfix">
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="60">0</span>%</div></div>
+									<div class="skill-title">Video Editing</div>
+								</div>
+								<div class="bar progress-line" data-width="60"></div>
+							</div>
+						</div>
+					</div>
+					
+					<!--Skill Item-->
+					<div class="skill-item column col-lg-4 col-md-6 col-sm-12">
+						<div class="skill-bar">
+							<div class="bar-inner">
+								<div class="skill-header clearfix">
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="40">0</span>%</div></div>
+									<div class="skill-title">Seo & Marketing</div>
+								</div>
+								<div class="bar progress-line" data-width="40"></div>
+							</div>
+						</div>
+					</div>
+					
+					<!--Skill Item-->
+					<div class="skill-item column col-lg-4 col-md-6 col-sm-12">
+						<div class="skill-bar">
+							<div class="bar-inner">
+								<div class="skill-header clearfix">
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="60">0</span>%</div></div>
+									<div class="skill-title">Photography</div>
+								</div>
+								<div class="bar progress-line" data-width="50"></div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	{%endblock%}

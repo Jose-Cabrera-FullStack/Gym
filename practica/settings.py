@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'core',
     'pages',
     'social',
+    'trainers',
+    'gallery',
 ]
 
 MIDDLEWARE = [

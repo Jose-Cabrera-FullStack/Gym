@@ -17,10 +17,3 @@ def home(request):
 def about_us(request):
     return render(request,"core/about-us.html")
 
-def trainers(request):
-    return render(request,"core/trainers.html")
-
-def gallery(request):
-    return render(request,"core/gallery.html")
-    
-

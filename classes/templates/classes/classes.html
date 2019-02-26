@@ -27,10 +27,10 @@
 							<!-- Overlay Box -->
 							<div class="overlay-box">
 								<div class="overlay-inner">
-									<h4><a href="shop-single.html">{{class.title}}</a></h4>
+									<h4><a href="{% url 'clase' class.id%}">{{class.title}}</a></h4>
 									<ul class="product-list">
-										<li><a href="shop-single.html"><span class="icon flaticon-add-cart"></span></a></li>
-										<li><a href="shop-single.html"><span class="icon flaticon-heart"></span></a></li>
+										<li><a href="{% url 'clase' class.id%}"><span class="icon flaticon-add-cart"></span></a></li>
+										<li><a href="{% url 'clase' class.id%}"><span class="icon flaticon-heart"></span></a></li>
 									</ul>
 								</div>
 							</div>
