@@ -42,10 +42,11 @@ INSTALLED_APPS = [
     'ckeditor',
     'contact',
     'core',
+    'gallery',
+    'imagekit',
     'pages',
     'social',
     'trainers',
-    'gallery',
 ]
 
 MIDDLEWARE = [

@@ -2,14 +2,14 @@
 {%load static%}
 
 {%block content%}
+	
 	<!-- Page Title -->
 	<section class="page-title">
 		<div class="auto-container">
-			<h1>Categories</h1>
+			<h1>Blog</h1>
 			<ul class="page-breadcrumb">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="index.html">Blog</a></li>
-				<li>Categories</li>
+				<li><a href="index.html">home</a></li>
+				<li>Blog</li>
 			</ul>
 		</div>
 	</section>
@@ -21,80 +21,45 @@
             <div class="row clearfix">
 				
 				<!--Content Side-->
-				{%for post in category.get_posts.all%}
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
-                    <div class="blog-details">
-						<div class="inner-box">
-							<div class="image">
-								<img src="{{post.image.url}}" alt="" />
-							</div>
-							<div class="lower-content">
-								<ul class="category">
-									<li>
-									{%for category in post.categories.all%}
-									<a href="#">{{category.name}}{%if not forloop.last%}-{%endif%}</a>
-									</li>
-									{%endfor%}
-									<li>{{post.created}}</li>
-								</ul>
-								<h4>{{post.title}}</h4>
-								<div class="text">
-									<p>{{post.content|safe}}</p>
+                    <div class="blog-sidebar">
+						<div class="row clearfix">
+							{%for post in category.get_posts.all%}
+							<!-- News Block -->
+							<div class="news-block col-lg-6 col-md-6 col-sm-12">
+								<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+									<div class="image">
+										<a href="{% url 'post' post.id%}"><img src="{{post.image_thumbnail.url}}" alt="" /></a>
+										<div class="content-box">
+											<div class="category">{%for category in post.categories.all%}{{category.name}}{%if not forloop.last%}-{%endif%}{%endfor%}</div>
+											<h4><a href="{% url 'post' post.id%}">{{post.title}}</a></h4>
+											<div class="post-date">{{post.created}}</div>
+											<a href="{% url 'post' post.id%}" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
+										</div>
+									</div>
 								</div>
 							</div>
+							{%endfor%}
+							
+							
 						</div>
-					</div>	
-					{%endfor%}
 						
-						<!-- Comment Form con este form cambiar el contact us -->
-						<div class="comment-form">
-							<div class="group-title"><h4>Leave a comment</h4></div>
-							<!-- Contact Form -->
-							<div class="contact-form">
-									
-								<!--Contact Form-->
-								<form method="post" action="blog.html">
-									<div class="row clearfix">
-									
-										<div class="column col-lg-6 col-md-12 col-sm-12">
-											
-											<div class="form-group">
-												<span class="icon fa fa-user"></span>
-												<input type="text" name="username" placeholder="Name" required>
-											</div>
-											
-											<div class="form-group">
-												<span class="icon fa fa-envelope-o"></span>
-												<input type="email" name="email" placeholder="Email" required>
-											</div>
-											
-											<div class="form-group">
-												<span class="icon fa fa-link"></span>
-												<input type="text" name="website" placeholder="Website" required>
-											</div>
-											
-										</div>
-										
-										<div class="column col-lg-6 col-md-12 col-sm-12">
-											
-											<div class="form-group">
-												<textarea name="message" placeholder="Massage"></textarea>
-											</div>
-											
-											<div class="form-group">
-												<button class="theme-btn submit-btn comment-btn" type="submit" name="submit-form">Post comment</button>
-											</div>
-											
-										</div>
-									
-										
-										
-									</div>
-								</form>
-									
+						<!--Styled Pagination-->
+						<div class="text-left">
+								<ul class="styled-pagination">
+									{%if post.has_previous%}
+									<li class="prev"><a href="?page={{ post.previous_page_number }}"><span class="fa fa-angle-left"></span> &nbsp; Previous</a></li>
+									{%endif%}
+									<span>{{ post.number }}</span>
+									<span>of</span>
+									<span>{{ post.paginator.num_pages }}</span>							  
+									{%if post.has_next%}
+									<li class="next"><a href="?page={{ post.next_page_number }}">Next &nbsp; <span class="fa fa-angle-right"></span></a></li>
+									<li class="next"><a href="?page={{ post.paginator.num_pages }}">Last &nbsp; <span class="fa fa-angle-right"></span></a></li>
+									{%endif%}
+								</ul>
 							</div>
-							<!--End contact Form -->
-						</div>
+						<!--End Styled Pagination-->
 						
 					</div>
 				</div>
@@ -110,23 +75,16 @@
                             </div>
                             <div class="widget-content">
 
+								{%for post in posts reversed%}
+								{%if post.id < 4%}
 								<article class="post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a></figure>
-                                    <div class="post-info">18.09.2018</div>
-                                    <div class="text"><a href="blog-single.html">Design solutions <br> for any media.</a></div>
+									<figure class="post-thumb"><a href="{% url 'post' post.id %}"><img src="{{post.image.url}}" alt=""></a></figure>
+                                    <div class="post-info">{{post.created}}</div>
+									<div class="text"><a href="{% url 'post' post.id %}">{{post.title}}</a></div>
                                 </article>
-    
-                                <article class="post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a></figure>
-                                    <div class="post-info">18.09.2018</div>
-                                    <div class="text"><a href="blog-single.html">Design solutions <br> for any media.</a></div>
-                                </article>
-                                
-                                <article class="post">
-                                    <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a></figure>
-                                    <div class="post-info">18.09.2018</div>
-                                    <div class="text"><a href="blog-single.html">Design solutions <br> for any media.</a></div>
-                                </article>
+								
+								{%endif%}
+								{%endfor%}
 
 							</div>
                         </div>
@@ -146,44 +104,9 @@
 							{%endfor%}
 							{%endfor%}
 						</div>
-						
-						<!-- Instagram Widget -->
-                        <div class="sidebar-widget instagram-widget">
-                        	<div class="sidebar-title">
-                            	<h3>instagram</h3>
-                            </div>
-                            <div class="widget-content">
-                            	<div class="images-outer clearfix">
-									<!--Image Box-->
-									<figure class="image-box"><a href="images/gallery/1.jpg" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-									<img src="images/gallery/instagram-1.jpg" alt=""></figure>
-									<!--Image Box-->
-									<figure class="image-box"><a href="images/gallery/2.jpg" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-									<img src="images/gallery/instagram-2.jpg" alt=""></figure>
-									<!--Image Box-->
-									<figure class="image-box"><a href="images/gallery/3.jpg" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-									<img src="images/gallery/instagram-3.jpg" alt=""></figure>
-									<!--Image Box-->
-									<figure class="image-box"><a href="images/gallery/4.jpg" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-									<img src="images/gallery/instagram-4.jpg" alt=""></figure>
-									<!--Image Box-->
-									<figure class="image-box"><a href="images/gallery/5.jpg" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-									<img src="images/gallery/instagram-5.jpg" alt=""></figure>
-									<!--Image Box-->
-									<figure class="image-box"><a href="images/gallery/6.jpg" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-									<img src="images/gallery/instagram-6.jpg" alt=""></figure>
-									<!--Image Box-->
-									<figure class="image-box"><a href="images/gallery/7.jpg" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-									<img src="images/gallery/instagram-7.jpg" alt=""></figure>
-									<!--Image Box-->
-									<figure class="image-box"><a href="images/gallery/8.jpg" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-									<img src="images/gallery/instagram-8.jpg" alt=""></figure>
-								</div>
-							</div>
-						</div>
-						
 					</aside>
 				</div>
+				
 			</div>
 		</div>
 	</div>
