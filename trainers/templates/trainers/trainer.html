@@ -1,5 +1,7 @@
 {%extends 'core/base.html'%}
 {%load static%}
+{% block title %}Trainer{% endblock %}
+
 {%block content%}
 	
 	<!-- Page Title -->
@@ -44,10 +46,18 @@
 			
 			<!-- Social Icon Two -->
 			<ul class="social-icon-two">
-				<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-				<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-				<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-				<li><a href="#"><span class="fa fa-tumblr"></span></a></li>
+				{%if trainer.facebook%}
+				<li><a href="{{trainer.facebook}}"><span class="fa fa-facebook"></span></a></li>
+				{%endif%}
+				{%if trainer.twitter%}
+				<li><a href="{{trainer.twitter}}"><span class="fa fa-twitter"></span></a></li>
+				{%endif%}
+				{%if trainer.linkedin%}
+				<li><a href="{{trainer.linkedin}}"><span class="fa fa-linkedin"></span></a></li>
+				{%endif%}
+				{%if trainer.instagram%}
+				<li><a href="{{trainer.instagram}}"><span class="fa fa-instagram"></span></a></li>
+				{%endif%}
 			</ul>
 	
 		</div>
@@ -73,7 +83,7 @@
 							<div class="bar-inner">
 								<div class="skill-header clearfix">
 									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="88">0</span>%</div></div>
-									<div class="skill-title">Photoshop</div>
+									<div class="skill-title">A</div>
 								</div>
 								<div class="bar progress-line" data-width="88"></div>
 							</div>

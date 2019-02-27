@@ -1,0 +1,50 @@
+{%extends 'core/base.html'%}
+{%load static%}
+{% block title %}Privacy{% endblock %}
+
+{%block content%}
+	
+<!-- Page Title -->
+<section class="page-title">
+		<div class="auto-container">
+			<h1>Privacy</h1>
+			<ul class="page-breadcrumb">
+					<li><a href="{% url 'home' %}">FAQ</a></li>
+					<li>Privacy</li>
+			</ul>
+		</div>
+	</section>
+	<!-- End Page Title -->
+	
+	{%for page in pages%}
+	<!--Sidebar Page-->
+    <div class="sidebar-page-container">
+			<div class="auto-container">
+				<div class="row clearfix">
+					<!--Content Side-->
+					<div class="content-side col-lg-12 col-md-12 col-sm-12">
+						<div class="shop-page product-details">
+							<!--Basic Details-->
+							<div class="basic-details">
+								<div class="details-header">
+									<!--Product Tabs-->
+									<div class="details-header">
+										<h4>Description</h4>
+										<div class="content">
+											<div class="">
+												<p>{{page.content|safe }}</p>
+											</div>
+										</div>	
+									</div>
+									
+								</div>
+							</div>
+							<!--Basic Details-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{%endfor%}
+
+{%endblock%}

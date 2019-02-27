@@ -1,5 +1,7 @@
 {%extends 'core/base.html'%}
 {%load static%}
+{% block title %}Blog{% endblock %}
+
 
 {%block content%}
 	
@@ -75,15 +77,12 @@
                             </div>
                             <div class="widget-content">
 
-								{%for post in posts reversed%}
-								{%if post.id < 4%}
+								{%for post in last%}
 								<article class="post">
 									<figure class="post-thumb"><a href="{% url 'post' post.id %}"><img src="{{post.image.url}}" alt=""></a></figure>
                                     <div class="post-info">{{post.created}}</div>
 									<div class="text"><a href="{% url 'post' post.id %}">{{post.title}}</a></div>
                                 </article>
-								
-								{%endif%}
 								{%endfor%}
 
 							</div>
@@ -94,14 +93,12 @@
                         	<div class="sidebar-title">
                             	<h3>Category</h3>
 							</div>
-							{%for post in posts%}
-							{%for category in post.categories.all%}
+							{%for post in categoria%}
                             <div class="widget-content">
 								<ul>
-									<li><a href="{% url 'category' category.id%}">{{category.name}}</a></li>
+									<li><a href="{% url 'category' post.id%}">{{post.name}}</a></li>
 								</ul>
 							</div>
-							{%endfor%}
 							{%endfor%}
 						</div>
 					</aside>

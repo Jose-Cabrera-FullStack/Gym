@@ -7,7 +7,11 @@ from imagekit.processors import ResizeToFill
 class Trainer(models.Model):
     name = models.CharField(max_length=200, verbose_name="Name")
     feature = models.CharField(max_length=200, verbose_name="Feature")
-    content = RichTextField(verbose_name="Content")
+    facebook = models.URLField(max_length=200, verbose_name="Facebook", null=True,blank=True)
+    twitter = models.URLField(max_length=200, verbose_name="Twitter", null=True,blank=True)
+    linkedin = models.URLField(max_length=200, verbose_name="Linkedin", null=True,blank=True)
+    instagram = models.URLField(max_length=200, verbose_name="Instagram", null=True,blank=True)
+    content = RichTextField(max_length=1000, verbose_name="Content")
     image = models.ImageField(verbose_name="Image",upload_to="trainers", null=True,blank=True)
     image_thumbnail = ImageSpecField(source='image',
                                  processors=[ResizeToFill(345, 345)],

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>ConquestFitness | {{request.name}}</title>
+<title>ConFit | {% block title %}{% endblock %}</title>
 {% load static %}
 <!-- Stylesheets -->
 <link href="{% static 'core/css/bootstrap.css' %}" rel="stylesheet">
@@ -125,9 +125,9 @@
 										<br>
 										<br>
 										<br>
-										<li><a href="#">Copyright</a></li>
-										<li><a href="#">FAQ</a></li>
-										<li><a href="#">Privacy</a></li>
+										<li><a href="{% url 'copyright' %}">Copyright</a></li>
+										<li><a href="{% url 'faq' %}">FAQ</a></li>
+										<li><a href="{% url 'privacy' %}">Privacy</a></li>
 									</ul>
 								</div>								
 							</div>
