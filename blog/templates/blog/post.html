@@ -5,15 +5,18 @@
 {%block content%}
 	
 	<!-- Page Title -->
+	{%for post in posts%}
 	<section class="page-title">
 		<div class="auto-container">
-			<h1>Blog</h1>
+			<h1>{{post.title}}</h1>
 			<ul class="page-breadcrumb">
-				<li><a href="index.html">home</a></li>
-				<li>Blog</li>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'blog' %}">Blog</a></li>
+				<li>Post</li>
 			</ul>
 		</div>
 	</section>
+	{%endfor%}
 	<!-- End Page Title -->
 	
 	<!--Sidebar Page-->
@@ -39,7 +42,7 @@
 									</li>
 									<li>{{post.created}}</li>
 								</ul>
-								<h4>{{post.title}}</h4>
+								
 								<div class="text">
 									<p>{{post.content|safe}}</p>	
 								</div>
@@ -59,16 +62,13 @@
                             </div>
                             <div class="widget-content">
 
-								{%for post in todos reversed%}
-								{%if post.id < 4%}
-								<article class="post">
-									<figure class="post-thumb"><a href="{% url 'post' post.id %}"><img src="{{post.image.url}}" alt=""></a></figure>
-                                    <div class="post-info">{{post.created}}</div>
-									<div class="text"><a href="{% url 'post' post.id %}">{{post.title}}</a></div>
-                                </article>
-								
-								{%endif%}
-								{%endfor%}
+									{%for post in last%}
+									<article class="post">
+										<figure class="post-thumb"><a href="{% url 'post' post.id %}"><img src="{{post.image_thumbnail.url}}" alt=""></a></figure>
+										<div class="post-info">{{post.created}}</div>
+										<div class="text"><a href="{% url 'post' post.id %}">{{post.title}}</a></div>
+									</article>
+									{%endfor%}
 							</div>
                         </div>
                         
@@ -77,16 +77,13 @@
                         	<div class="sidebar-title">
                             	<h3>Category</h3>
                             </div>
+                            {%for post in categoria%}
                             <div class="widget-content">
-                            	<ul>
-									<li><a href="#">Busines</a></li>
-									<li><a href="#">Marketing</a></li>
-									<li><a href="#">Creative</a></li>
-									<li><a href="#">Trending</a></li>
-									<li><a href="#">Creative</a></li>
-									<li><a href="#">Trending</a></li>
+								<ul>
+									<li><a href="{% url 'category' post.id%}">{{post.name}}</a></li>
 								</ul>
 							</div>
+							{%endfor%}
 						</div>
 					</aside>
 				</div>

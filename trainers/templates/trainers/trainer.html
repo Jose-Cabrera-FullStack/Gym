@@ -73,19 +73,20 @@
 			</div>
 
 			<!--Skills-->
+			{%for trainer in trainers%}
 			<div class="skills">
-			
-				<div class="row clearfix">
 				
+				<div class="row clearfix">
+					
 					<!--Skill Item-->
 					<div class="skill-item column col-lg-4 col-md-6 col-sm-12">
 						<div class="skill-bar">
 							<div class="bar-inner">
 								<div class="skill-header clearfix">
-									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="88">0</span>%</div></div>
-									<div class="skill-title">A</div>
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="{{trainer.crossfit}}">0</span>%</div></div>
+									<div class="skill-title">CrossFit</div>
 								</div>
-								<div class="bar progress-line" data-width="88"></div>
+								<div class="bar progress-line" data-width="{{trainer.crossfit}}"></div>
 							</div>
 						</div>
 					</div>
@@ -95,10 +96,10 @@
 						<div class="skill-bar">
 							<div class="bar-inner">
 								<div class="skill-header clearfix">
-									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="70">0</span>%</div></div>
-									<div class="skill-title">HTML Coding</div>
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="{{trainer.yoga}}">0</span>%</div></div>
+									<div class="skill-title">Yoga</div>
 								</div>
-								<div class="bar progress-line" data-width="70"></div>
+								<div class="bar progress-line" data-width="{{trainer.yoga}}"></div>
 							</div>
 						</div>
 					</div>
@@ -108,10 +109,10 @@
 						<div class="skill-bar">
 							<div class="bar-inner">
 								<div class="skill-header clearfix">
-									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="90">0</span>%</div></div>
-									<div class="skill-title">WordPress</div>
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="{{trainer.step}}">0</span>%</div></div>
+									<div class="skill-title">Step</div>
 								</div>
-								<div class="bar progress-line" data-width="90"></div>
+								<div class="bar progress-line" data-width="{{trainer.step}}"></div>
 							</div>
 						</div>
 					</div>
@@ -121,10 +122,10 @@
 						<div class="skill-bar">
 							<div class="bar-inner">
 								<div class="skill-header clearfix">
-									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="60">0</span>%</div></div>
-									<div class="skill-title">Video Editing</div>
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="{{trainer.body}}">0</span>%</div></div>
+									<div class="skill-title">Body Pump</div>
 								</div>
-								<div class="bar progress-line" data-width="60"></div>
+								<div class="bar progress-line" data-width="{{trainer.body}}"></div>
 							</div>
 						</div>
 					</div>
@@ -134,10 +135,10 @@
 						<div class="skill-bar">
 							<div class="bar-inner">
 								<div class="skill-header clearfix">
-									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="40">0</span>%</div></div>
-									<div class="skill-title">Seo & Marketing</div>
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="{{trainer.gap}}">0</span>%</div></div>
+									<div class="skill-title">GAP</div>
 								</div>
-								<div class="bar progress-line" data-width="40"></div>
+								<div class="bar progress-line" data-width="{{trainer.gap}}"></div>
 							</div>
 						</div>
 					</div>
@@ -147,10 +148,10 @@
 						<div class="skill-bar">
 							<div class="bar-inner">
 								<div class="skill-header clearfix">
-									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="60">0</span>%</div></div>
-									<div class="skill-title">Photography</div>
+									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="{{trainer.spinning}}">0</span>%</div></div>
+									<div class="skill-title">Spinning</div>
 								</div>
-								<div class="bar progress-line" data-width="50"></div>
+								<div class="bar progress-line" data-width="{{trainer.spinning}}"></div>
 							</div>
 						</div>
 					</div>
@@ -158,6 +159,7 @@
 				</div>
 				
 			</div>
+			{%endfor%}
 			
 		</div>
 	</section>

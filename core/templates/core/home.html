@@ -86,49 +86,23 @@
 			<div class="row clearfix">
 				
 				<!-- News Block -->
+				{%for post in posts%}
 				<div class="news-block col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="image">
-							<a href="blog-single.html"><img src="{% static 'core/images/resource/news-1.jpg' %}" alt="" /></a>
+							<a href="{% url 'post' post.id%}"><img src="{{post.image_thumbnail.url}}" alt="" /></a>
 							<div class="content-box">
-								<div class="category">books</div>
-								<h4><a href="blog-single.html">California abandons plan to tax text messages</a></h4>
-								<div class="post-date">December 19, 2018</div>
-								<a href="blog-single.html" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
+								<div class="category">{{post.category}}</div>
+								<h4><a href="{% url 'post' post.id%}">{{post.title}}</a></h4>
+								<div class="post-date">{{post.created}}</div>
+								<a href="{% url 'post' post.id%}" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
 							</div>
 						</div>
 					</div>
 				</div>
+				{%endfor%}
 				
-				<!-- News Block -->
-				<div class="news-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box">
-						<div class="image">
-							<a href="blog-single.html"><img src="{% static 'core/images/resource/news-2.jpg' %}" alt="" /></a>
-							<div class="content-box">
-								<div class="category">design</div>
-								<h4><a href="blog-single.html">Good design is good for business, new study finds</a></h4>
-								<div class="post-date">December 19, 2018</div>
-								<a href="blog-single.html" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
-							</div>
-						</div>
-					</div>
-				</div>
 				
-				<!-- News Block -->
-				<div class="news-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box">
-						<div class="image">
-							<a href="blog-single.html"><img src="{% static 'core/images/resource/news-3.jpg' %}" alt="" /></a>
-							<div class="content-box">
-								<div class="category">architecture</div>
-								<h4><a href="blog-single.html">Enter a new dimension Augmented  revolution</a></h4>
-								<div class="post-date">December 19, 2018</div>
-								<a href="blog-single.html" class="theme-btn btn-style-one">continue reading <span class="arrow flaticon-next-3"></span></a>
-							</div>
-						</div>
-					</div>
-				</div>
 				
 			</div>
 		</div>

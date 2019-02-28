@@ -17,6 +17,12 @@ class Trainer(models.Model):
                                  processors=[ResizeToFill(345, 345)],
                                  format='JPEG',
                                  options={'quality': 60})
+    crossfit = models.PositiveSmallIntegerField(verbose_name="Crossfit",default=50)
+    yoga = models.PositiveSmallIntegerField(verbose_name="Yoga",default=50)
+    step = models.PositiveSmallIntegerField(verbose_name="Step",default=50)
+    body = models.PositiveSmallIntegerField(verbose_name="Body",default=50)
+    gap = models.PositiveSmallIntegerField(verbose_name="GAP",default=50)
+    spinning = models.PositiveSmallIntegerField(verbose_name="Spinning",default=50)
     created = models.DateTimeField(verbose_name= "Creation Date", auto_now_add=True)
     updated = models.DateTimeField(verbose_name= "Updation Date", auto_now_add=True)
 

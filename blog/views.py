@@ -31,5 +31,8 @@ def category(request,category_id):
 def post(request,post_id):
     post = get_object_or_404(Post,id=post_id)
     posts = Post.objects.filter(id=post_id)
-    todos = Post.objects.all()
-    return render(request,"blog/post.html",{"post":post,"posts":posts,"todos":todos})
+    categoria = Category.objects.all()
+
+    last = Post.objects.filter(published=True).order_by('-created')[0:3]
+
+    return render(request,"blog/post.html",{"post":post,"posts":posts,"last":last,"categoria":categoria})

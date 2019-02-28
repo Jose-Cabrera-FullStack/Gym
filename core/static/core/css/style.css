@@ -2258,7 +2258,7 @@ img{
     margin-right:10px;
     display:inline-block;
     text-transform:capitalize;
-    color:rgba(255,255,255,0.20);
+    color:rgb(255, 255, 255);
 }
 
 .page-title .page-breadcrumb li:after{
@@ -2276,7 +2276,7 @@ img{
 .page-title .page-breadcrumb li a{
     position:relative;
     font-size:16px;
-    color:rgba(255,255,255,0.20);
+    color:rgb(255, 255, 255);
     transition:all 0.3s ease;
     -moz-transition:all 0.3s ease;
     -webkit-transition:all 0.3s ease;
@@ -2285,7 +2285,7 @@ img{
 }
 
 .page-title .page-breadcrumb li a:hover{
-    color:rgba(255,255,255,0.80);
+    color:rgb(255, 255, 255);
 }
 
 /*** 
@@ -2852,7 +2852,7 @@ img{
 
 .sidebar .popular-posts .post-info{
     font-size:13px;
-    color:#ffffff;
+    color:#000000;
     font-weight:600;
     padding: 0px 6px;
     margin-bottom: 12px;
@@ -3355,7 +3355,7 @@ img{
     line-height:1.9em;
     padding-top:15px;
     margin-bottom:20px;
-    color:rgba(255,255,255,0.60);
+    color:rgb(255, 255, 255);
 }
 
 .contact-page-section-two .info-column .inner-column ul li:before{
@@ -3391,7 +3391,7 @@ img{
     top:50%;
     width:215px;
     height:58px;
-    color:#ffffff;
+    color:#000000;
     margin:0 auto;
     font-size:18px;
     font-weight:400;
